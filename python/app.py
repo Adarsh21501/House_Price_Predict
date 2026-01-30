@@ -1,11 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-
 import joblib
 import pandas as pd
 
 app = Flask(__name__)
-CORS(app)
+CORS(app)  # ✅ Allow frontend access
 
 # Load model & scaler
 model = joblib.load("house_price_model.pkl")
@@ -24,5 +23,6 @@ def predict():
         "predicted_price": int(price[0])
     })
 
+# ✅ IMPORTANT: No port, no debug
 if __name__ == "__main__":
-    app.run(port=5001, debug=True)
+    app.run()

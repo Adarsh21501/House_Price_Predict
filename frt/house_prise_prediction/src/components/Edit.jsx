@@ -45,7 +45,7 @@ function EditPrediction() {
 
       // 🔁 CALL ML MODEL AGAIN
       const response = await axios.post(
-        "http://127.0.0.1:5001/predict",
+        "https://house-price-backend.onrender.com/predict",
         numericFeatures
       );
 

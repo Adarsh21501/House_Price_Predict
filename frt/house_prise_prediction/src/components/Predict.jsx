@@ -51,7 +51,8 @@ function Predict() {
     try {
       // 🔗 Call backend
       const response = await axios.post(
-        "http://127.0.0.1:5001/predict",
+        "https://house-price-backend.onrender.com/predict",
+
         form
       );
 
